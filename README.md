@@ -1,2 +1,2 @@
 # codewars
-Fun with katas.
+Fun with katas from [Codewars](http://www.codewars.com/).
