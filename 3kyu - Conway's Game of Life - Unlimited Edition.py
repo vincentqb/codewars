@@ -1,12 +1,12 @@
-def convert_table_to_dict(cells):
-    ni = len(cells)
-    nj = len(cells[0])
+def convert_table_to_dict(table):
+    ni = len(table)
+    nj = len(table[0])
     
     dict = {}
     for i in range(ni):
       for j in range(nj):
-        if cells[i][j] == 1:
-          dict[(i,j)] = True
+        if table[i][j] == 1:
+          dict[(i,j)] = None
           
     return dict
 
@@ -39,20 +39,20 @@ def get_generation(cells, generations):
     stack = {}
     cells_new = {}
     
-    for (i,j) in cells_dict.keys():
+    for (i,j) in cells_dict:
       for (di, dj) in product((-1,0,1), (-1,0,1)):
-        stack[(i+di,j+dj)] = True
+        stack[(i+di,j+dj)] = None
     
-    for (i,j) in stack.keys():
+    for (i,j) in stack:
       neighbours = 0
       for (di, dj) in product((-1,0,1), (-1,0,1)):
         if (i+di,j+dj) in cells_dict and (di,dj) != (0,0):
           neighbours += 1
         
       if neighbours == 3:
-        cells_new[(i,j)] = True
+        cells_new[(i,j)] = None
       elif neighbours == 2 and (i,j) in cells_dict:
-        cells_new[(i,j)] = True
+        cells_new[(i,j)] = None
           
     cells_dict = cells_new
           
