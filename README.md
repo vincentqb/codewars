@@ -1,0 +1,2 @@
+# codewars
+Fun with katas.
