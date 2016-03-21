@@ -1,4 +1,5 @@
 def can_move(map, i, j, di, dj):
+  # Check whether can move in specified direction
   n = len(map)
   i += di
   j += dj
@@ -43,13 +44,11 @@ def spiralize(size):
   # Direction vector
   di, dj = 0, 1
   
-  # Make a snake
+  # Make a snake, cannot rotate more than once each time
   rotated = 0
   while rotated < 2:
-    # print(i,j)
-    # print(spiral)
-
     spiral[i][j] = 1
+
     if can_move(spiral, i, j, di, dj):
       # Move
       i += di
